@@ -26,7 +26,6 @@ function Square(props){
     render() {
       return (
         <div>
-          <div className="status">{status}</div>
           <div className="board-row">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
@@ -73,7 +72,9 @@ function Square(props){
       });
     }
     render() {
-
+      const history = this.state.history;
+      const current = history[history.length - 1];
+      const winner = calculateWinner(current.squares);
       
 
       return (
